@@ -1,0 +1,33 @@
+# Main function
+def main():
+    filename = "purchase_data1.csv"  # Change to your dataset filename
+    threshold = float(input("Enter the purchase amount threshold: "))
+
+    # Initialize the root of the binary search tree
+    root = None
+
+    # Read and parse the CSV dataset
+    dataset = read_and_parse_csv(filename)
+
+    # Build the binary search tree
+    for purchase_amount, customer_id, product_id, purchase_date in dataset:
+        root = insert(root, purchase_amount, customer_id, product_id, purchase_date)
+
+    # Calculate and display the total purchase amount
+    total_purchase_amount = calculate_total_purchase_amount(root)
+    print(f"Total Purchase Amount: ${total_purchase_amount:.2f}")
+
+    # Find and display customers with a purchase amount above the threshold
+    print(f"Customers with Purchase Amount > ${threshold:.2f}:")
+    find_customers_above_threshold(root, threshold)
+
+    # Create a networkx graph from the binary search tree
+    tree_graph = build_tree_graph(root)
+
+    # Draw the tree using matplotlib
+    plt.figure(figsize=(10, 5))
+    pos = nx.spring_layout(tree_graph)  # Position nodes in a tree-like layout
+    labels = nx.get_node_attributes(tree_graph, 'label')
+    nx.draw_networkx(tree_graph, pos, labels=labels, with_labels=True, node_size=5000, node_color='lightblue', font_size=8)
+    plt.title("Binary Search Tree Visualization")
+    plt.show()
