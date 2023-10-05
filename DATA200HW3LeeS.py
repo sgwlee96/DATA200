@@ -4,9 +4,6 @@ import streamlit as st
 import plotly.express as px
 
 
-########################################################################
-# streamlit URL: https://data200-klf6uvogf2srbv4yjthd3k.streamlit.app/ #
-########################################################################
 
 
 
