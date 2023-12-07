@@ -1,7 +1,6 @@
 pandas
 numpy
 plotly.express
-matplotlib.pyplot
 seaborn
 collections
 wordcloud
