@@ -7,10 +7,9 @@ import seaborn as sns
 from wordcloud import WordCloud, STOPWORDS
 import ast
 
-
 # Import datasets 
 # Read Fish.csv Dataset
-df = pd.read_csv("imdb_movies_shows.csv")
+df = pd.read_csv("./imdb_movies_shows.csv")
 # create Dashboard
 
 for i in range(len(df['genres'])):
