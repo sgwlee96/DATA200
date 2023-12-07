@@ -4,7 +4,6 @@ import streamlit as st
 import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
-import collections
 from wordcloud import WordCloud, STOPWORDS
 import ast
 
