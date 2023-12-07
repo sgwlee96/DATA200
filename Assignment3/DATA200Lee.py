@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud, STOPWORDS
 import ast
+import os
 
 # Import datasets 
 # Read Fish.csv Dataset
-df = pd.read_csv("./imdb_movies_shows.csv")
+file_path = os.path.join(os.path.dirname(__file__), "imdb_movies_shows.csv")
+df = pd.read_csv(file_path)
 # create Dashboard
 
 for i in range(len(df['genres'])):
