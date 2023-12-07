@@ -1,0 +1,14 @@
+{% load static %}
+
+{% block content %}
+    <h2>Interactive Bubble Chart</h2>
+
+    <!-- Include Plotly.js from CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Include your custom script -->
+    <script src="{% static 'visualization_app/custom_script_3d.js' %}"></script>
+
+    <!-- Include the generated HTML file -->
+    <div>{% include 'visualization_app/visualization2.html' %}</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% load static %}
+
+{% block title %}Combined Chart - My Website{% endblock %}
+
+{% block content %}
+    <h2>Combined Chart</h2>
+
+    <!-- Include Plotly.js from CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Include your custom bubble chart script -->
+    <script src="{% static 'visualization_app/custom_script.js' %}"></script>
+
+    <!-- Container for the Plotly bubble chart -->
+    <div id="bubble-chart"></div>
+
+    <!-- Include your custom line chart script -->
+    <script src="{% static 'visualization_app/custom_script_3d.js' %}"></script>
+
+    <!-- Container for the Plotly line chart -->
+    <div id="3d-chart"></div>
+{% endblock %}
