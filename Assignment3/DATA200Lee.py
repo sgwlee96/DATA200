@@ -72,9 +72,14 @@ It indicates that movies tend to have a slightly higher median IMDb score compar
 This suggests that movies may have more varied audience reactions, while shows exhibit a more consistent rating pattern.
 """)
 
-# Visualization 4: Heatmap of correlation between numeric columns
+# Visualization 4: Heatmap
 st.subheader('Correlation Heatmap')
-corr_heatmap = px.imshow(filtered_df.corr(), title='Correlation Heatmap')
+
+# Select only numeric columns for correlation matrix
+numeric_columns = filtered_df.select_dtypes(include=[np.number]).columns
+corr_matrix = filtered_df[numeric_columns].corr()
+
+corr_heatmap = px.imshow(corr_matrix, title='Correlation Heatmap')
 st.plotly_chart(corr_heatmap)
 st.write("""
 The heatmap visualizes the correlation between numeric columns such as release year, runtime, IMDb score, and IMDb votes. 
